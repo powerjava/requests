@@ -44,7 +44,7 @@ public abstract class AbstractBroswer implements Broswer {
     @Override
     public Response get(String url, HttpContext context, NameValuePair... pairs) {
         Response response = null;
-        HttpUriRequest request = RequestBuilder.get()
+        HttpUriRequest request = RequestBuilder
                 .get(url)
                 .addParameters(pairs).build();
         try {

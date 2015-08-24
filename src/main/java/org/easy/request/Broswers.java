@@ -20,11 +20,11 @@ import java.util.Arrays;
 import java.util.Collection;
 
 /**
- * Requests.
+ * Broswers.
  *
  * @author Kuo Hong on 2015/8/22 0022.
  */
-public class Requests {
+public class Broswers {
     /**
      * 最大连接数
      */
@@ -38,7 +38,7 @@ public class Requests {
      */
     public final static int WAIT_TIMEOUT = RequestsUtils.WAIT_TIMEOUT();
     static PoolingHttpClientConnectionManager cm = new PoolingHttpClientConnectionManager();
-    private static Logger logger = LoggerFactory.getLogger(Requests.class);
+    private static Logger logger = LoggerFactory.getLogger(Broswers.class);
     private static int SOCKET_TIME_OUT = RequestsUtils.SOCKET_TIME_OUT();
     /**
      * 连接超时时间

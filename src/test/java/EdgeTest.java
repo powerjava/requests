@@ -1,5 +1,5 @@
 import org.easy.request.Broswer;
-import org.easy.request.Requests;
+import org.easy.request.Broswers;
 import org.easy.request.response.Response;
 
 import java.util.concurrent.TimeUnit;
@@ -9,8 +9,8 @@ import java.util.concurrent.TimeUnit;
  */
 public class EdgeTest {
     public static void main(String[] args) {
-        Requests r = new Requests();
-        Broswer edge = Requests.Edge();
+        Broswers r = new Broswers();
+        Broswer edge = Broswers.Edge();
         EdgeTest test = new EdgeTest();
         for (int i = 0; i < 1; i++) {
             Thread t = test.new Test(edge);
