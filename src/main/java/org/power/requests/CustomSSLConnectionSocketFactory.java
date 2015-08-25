@@ -1,5 +1,7 @@
 package org.power.requests;
 
+import org.apache.http.conn.ssl.DefaultHostnameVerifier;
+import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
 import org.apache.http.protocol.HttpContext;
 import org.power.requests.struct.Proxy;
@@ -16,8 +18,8 @@ public class CustomSSLConnectionSocketFactory extends SSLConnectionSocketFactory
     private final Proxy proxy;
 
     public CustomSSLConnectionSocketFactory(SSLContext sslContext, Proxy proxy, boolean verify) {
-        super(sslContext, verify ? SSLConnectionSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER
-                : SSLConnectionSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
+        super(sslContext, verify ? new DefaultHostnameVerifier()
+                : NoopHostnameVerifier.INSTANCE);
         this.proxy = proxy;
     }
 
